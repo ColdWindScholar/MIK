@@ -1031,14 +1031,9 @@ Procedure.s GetProgramVersion() ;Получаем версию программ�
 EndProcedure
 
 Procedure IsWin64(); is the OS bit;
-  Protected Info.SYSTEM_INFO, Result
+  Protected Info.SYSTEM_INFO
   GetNativeSystemInfo(Info)
-  If info\wProcessorArchitecture
-    Result = #True
-  Else
-    Result = #False
-  EndIf
-  ProcedureReturn Result
+  ProcedureReturn info\wProcessorArchitecture
 EndProcedure
 
 Procedure Out(text.s="")
@@ -5231,10 +5226,10 @@ DataSection
 	end_lng:
 EndDataSection
 ; IDE Options = PureBasic 6.04 LTS (Windows - x64)
-; CursorPosition = 1579
-; FirstLine = 1550
+; CursorPosition = 1035
+; FirstLine = 1031
 ; Folding = -------------------
-; Markers = 737,1942,4066,4067
+; Markers = 737,1937,4061,4062
 ; Optimizer
 ; EnableThread
 ; EnableXP
