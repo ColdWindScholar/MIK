@@ -4476,7 +4476,7 @@ Procedure WindowAbout()
 		FrameGadget(#PB_Any, 70, 4, 260, 105, "")
 		ThisYear = Year(Date())
 		If ThisYear<2021 : ThisYear=2025 : EndIf
-		TextGadget(#PB_Any, 80, 85, 240, 24, "Copyright 2020-"+Str(ThisYear)+" © CryptoNickSoft™", #PB_Text_Center)
+		TextGadget(#PB_Any, 80, 85, 240, 24, "Copyright 2020-"+Str(ThisYear)+" © CryptoNickSoft™ & ColdWindScholar™", #PB_Text_Center)
 		
 		BindEvent(#PB_Event_Menu, @WindowAbout(), Window)
 		BindEvent(#PB_Event_CloseWindow, @WindowAbout(), Window)
@@ -5226,8 +5226,8 @@ DataSection
 	end_lng:
 EndDataSection
 ; IDE Options = PureBasic 6.04 LTS (Windows - x64)
-; CursorPosition = 1035
-; FirstLine = 1031
+; CursorPosition = 4478
+; FirstLine = 4466
 ; Folding = -------------------
 ; Markers = 737,1937,4061,4062
 ; Optimizer
