@@ -1,0 +1,186 @@
+Bitte Datei(en) des Firmware-Images oder der Partition auswählen
+Datei(en)
+Bitte den Ordner des entpackten Images oder der Partition auswählen
+Datei
+Entpacken
+Packen
+Letzte
+Einstellungen
+Beenden
+Bearbeiten
+Log-Fenster löschen
+Hilfe
+Hilfe
+Thema
+Diskussion
+Kanal des Autors
+Projekt spenden
+Über
+Stapelverarbeitung:
+Aktion(en)
+Warten Sie auf die Ausführung der Aktionen...
+Ein Ordner mit einem entpackten Abschnitt wird erkannt, löschen!
+Das Programm weiß nicht, wie es entpacken soll:
+Versuchen Sie, dieses Partitionsabbild zu bearbeiten mit:
+Im Verzeichnis:
+keine Anleitung zum Erstellen des Images gefunden!
+Es gibt keine aktiven Aktionen.
+Sie können dieses Fenster schließen.
+Weitere Aktionen sind geplant
+Bitte warten Sie...
+Ordner mit entpackter Firmware, löschen!
+Entpacken des Image der Firmware:
+Firmware-Image entpacken:
+Aktion zur Zusammenstellung der Firmware:
+abgeschlossen.
+Aktion beim Entpacken der Firmware:
+Das Partitions-Image wird entpackt:
+Aktion zum Entpacken des Partitionsabbild:
+Das Partitionsabbild wird gepackt:
+Aktion zum Erstellen eines Partitionsabbild:
+Freier Platz:
+Exitcode
+Fenster
+Auf allen Fenstern
+Hintergrund
+Transparenz des Fensters
+Schrift des Fensters
+Farbe der Schrift
+Schriftgröße
+Auspacken
+Packen
+Nach dem Entpacken des Firmwareabbild:
+Entpacken Sie die Partition:
+Öffnen Sie einen Ordner im Datei-Explorer
+Vor dem Packen der Firmware:
+Packen Sie die Partition:
+Fügen Sie dem Namen der Firmware-Datei einen Index hinzu
+Öffnen Sie ein Image in
+Geben Sie den Pfad zur Datei an:
+Ton
+Lautstärke
+Signal nach Durchführung aller Aktionen
+Audiosignal abspielen
+Nicht unterstütztes Format
+Auf das Programmsymbol können Sie nur das/die Image(s) der Firmware übertragen
+Image(s) Partition(en)
+oder Ordner mit ungepackter Firmware, Ordner mit einem ungepackten Update, Ordner mit einer ungepackten Partition.
+Ziehen Sie das/die Firmware-Image(s) per Drag & Drop in dieses Fenster oder auf das Programmsymbol
+kann nicht entpackt werden!
+Umbenennen
+Keine aktive Aktion
+Projekt spenden
+Programm zum Entpacken und Verpacken von Android-Firmware und Partitions-Images
+Achtung
+Geplante Aktionen werden gerade ausgeführt!
+Erfolgreich abgeschlossen
+Ausführungsfehler
+Bitte geben Sie den Pfad zur Datei an
+Sind Sie sicher, dass Sie das Programmfenster schließen möchten?
+Hat Ihnen das Projekt gefallen? Möchten Sie es weiterentwickeln? Unterstützen Sie uns finanziell. Überweisen Sie einen beliebigen Betrag auf eine dieser Geldbörsen:
+Keine Zwischenpartitionen löschen
+Andere
+erfolgreich gelöscht.
+Löschen des Partitions-Images:
+Sprache
+Sprache des interfaces
+in
+Erstellen einer Liste von Dateiattributen
+Aktion zum Erstellen einer Dateiattributliste
+Im Ordner
+keine Unterordner
+und(oder)
+die Attributliste kann nicht erstellt werden
+Versuchen Sie, eine andere Version zu entpacken
+kopieren
+Alles auswählen
+Speichern unter...
+Bitte wählen Sie einen Speicherpfad:
+Neuigkeiten 
+Aktualisierungsdatei(en)
+Die Aktualisierungsdatei wird gerade erstellt:
+Die Dateisignatur wird durchgeführt:
+Aktion zum Erstellen der Aktualisierungsdatei:
+Signatur mit einem Testschlüssel
+Komprimierungsgrad:
+Version der Übertragungsliste:
+Komprimieren
+Dekomprimieren
+Letzte Liste löschen
+Datei nicht gefunden:
+Der Ordner wurde nicht gefunden:
+Möglicherweise wurde er gelöscht oder verschoben
+Es ist möglich, dass er gelöscht oder verschoben wurde.
+Symbolleiste
+Horizontal
+Vertikal
+Keine
+Ansicht
+Vertikales Bedienfeld
+Verknüpfung zum Desktop erstellen
+Die Dekompilierung der Anwendung wird durchgeführt:
+Aktion bei der Dekompilierung der Anwendung:
+Anwendung erstellen:
+Aktion zum Erstellen einer Anwendung:
+Dateiabgleich wird durchgeführt:
+Installation des Frameworks:
+Erstellen von
+Extern verwenden
+Wählen Sie eine Datei aus:
+Alle unkomprimierten Daten abgleichen
+Die Datei wird gerade entpackt:
+Aktion zum Entpacken der Datei:
+Es gibt Fehler bei der Ausführung
+Hervorheben
+Erfolg
+Fehler
+Entpacken des Archivs in den Unterordner
+Entpacken Sie den Inhalt nach dem Entpacken aus dem Archiv
+Löschen des Archivs nach dem Entfernen des Inhalts
+Eine Hash-Datei für das Firmware-Image erstellen
+Nach dem Assemblieren der Firmware diese in das Archiv packen
+Löschen des Firmware-Images nach dem Komprimieren in das Archiv
+Archiv Größe
+Sammeln von Abschnitten, die die ursprüngliche Größe nicht überschreiten
+Freien Speicherplatz hinzufügen
+Keine Sicherungskopien speichern
+Das Original nicht reservieren
+Eine Sicherungskopie des Originals wird erstellt
+Bitte installieren Sie Java von der offiziellen Seite
+und starten Sie den Computer neu
+Inakzeptable Symbole
+Langer Pfad
+Symbol
+Pfad
+Kopfzeile
+Lateinisch
+nicht lateinisch
+Leerzeichen
+Symbole
+Prüfsumme prüfen
+Prüfsumme erstellen
+Archiv erstellen
+Komprimierungsgrad
+Firmware-Image-Datei entfernen
+Wiederverwerten
+Konvertieren
+in
+Schließt automatisch in
+Einfügen
+Start Einstellungen
+Freien Speicherplatz abschneiden
+Suchen in
+In einer Datei sammeln?
+Öffnen Sie einen Ordner im Explorer
+Schließe dieses Fenster
+Möchten Sie die Datei entpacken?
+Ja
+NEIN
+Stornieren
+Super-Packaging ist leider nur auf x64-Systemen möglich ...
+Partitionen extrahieren aus:
+Super Dateiname und Erweiterung
+Typ: Sparse oder Raw
+Supergröße:
+Größe aller Partitionen:
+Freier Speicherplatz in Super:
