@@ -4465,18 +4465,19 @@ Procedure WindowAbout()
 		EndSelect
 	Else
 		; Создание окна и перенаправление событий
-		Window = OpenWindow(#PB_Any, 0, 0, 340, 119, Lng(18), #PB_Window_SystemMenu | #PB_Window_WindowCentered, WindowID(#WIN_MAIN))
+		Window = OpenWindow(#PB_Any, 0, 0, 370, 159, Lng(18), #PB_Window_SystemMenu | #PB_Window_WindowCentered, WindowID(#WIN_MAIN))
 		SendMessage_ (WindowID(Window), #WM_SETICON, 0, ImageID(7))
 		ImageGadget(#PB_Any, 10, 23, 48, 48, ImageID(16))
-		BuildID = TextGadget(#PB_Any, 5, 85, 57, 24, "Build: "+#PB_Editor_BuildCount, #PB_Text_Center)
+		BuildID = TextGadget(#PB_Any, 5, 85, 57, 48, "Build: "+#PB_Editor_BuildCount, #PB_Text_Center)
 		SetGadgetColor(BuildID, #PB_Gadget_FrontColor, 8421504)
 		TextID = TextGadget(#PB_Any, 75, 20, 250, 25, ProgramName$, #PB_Text_Center)
 		Font = LoadFont(#PB_Any,"Cooper Black", 13, #PB_Font_Italic) : SetGadgetFont(TextID, FontID(Font))
 		TextGadget(#PB_Any, 80, 48, 240, 35, Lng(73), #PB_Text_Center);+" "+st\CPU_Name
-		FrameGadget(#PB_Any, 70, 4, 260, 105, "")
+		FrameGadget(#PB_Any, 70, 4, 290, 145, "")
 		ThisYear = Year(Date())
 		If ThisYear<2021 : ThisYear=2025 : EndIf
-		TextGadget(#PB_Any, 80, 85, 240, 24, "Copyright 2020-"+Str(ThisYear)+" © CryptoNickSoft™ & ColdWindScholar™", #PB_Text_Center)
+		TextGadget(#PB_Any, 80, 85, 290, 24, "Copyright 2020-"+Str(ThisYear)+" © CryptoNickSoft™", #PB_Text_Center)
+		TextGadget(#PB_Any, 80, 109, 290, 24, "Copyright 2020-"+Str(ThisYear)+" © ColdWindScholar™", #PB_Text_Center)
 		
 		BindEvent(#PB_Event_Menu, @WindowAbout(), Window)
 		BindEvent(#PB_Event_CloseWindow, @WindowAbout(), Window)
@@ -5226,8 +5227,8 @@ DataSection
 	end_lng:
 EndDataSection
 ; IDE Options = PureBasic 6.04 LTS (Windows - x64)
-; CursorPosition = 4478
-; FirstLine = 4466
+; CursorPosition = 4467
+; FirstLine = 4445
 ; Folding = -------------------
 ; Markers = 737,1937,4061,4062
 ; Optimizer
