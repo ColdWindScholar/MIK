@@ -1,3 +1,4 @@
 {
-  "tar_repacker.py": "bin/x64/tar_repacker.exe"
+  "tar_repacker.py": "bin/x64/tar_repacker.exe",
+  "https://github.com/crazystylus/otadump": "bin/x64/otadump.exe"
 }
