@@ -1,5 +1,5 @@
 # Multi Image Kitchen V4.3 β
-###  Developed by [CryptoNickSoft](https://github.com/CryptoNickSoft/)
+###  Developed by [CryptoNickSoft](https://github.com/CryptoNickSoft/) & [ColdWindScholar](https://github.com/ColdWindScholar/)
 ***
 ## Readme 
 ```
