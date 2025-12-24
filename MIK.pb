@@ -134,7 +134,6 @@ Declare WndProc(hWnd,Message,wParam,lParam)
 Declare GetUsbTool()
 Declare ChoiceFramework()
 Declare WindowSettings()
-Declare WindowDonate()
 Declare WindowAbout()
 Declare.s ReadStr(ID, Key$ , StrValue$="", put=1, startPhrase$="", endPhrase$="!@#")
 ;Declare.s ReadStr(ID, Key$ , StrValue$="")
@@ -303,13 +302,11 @@ Enumeration MenuStatusBar
   #News
   #Discussion
   #AuthorChannel
-  #Donate
   #About
   #CmdLine
   #StatusBar
   #RecentMenu
   #EditMenu
-  #Escape_WIN_DONATE
 EndEnumeration
 
 ; --> Structure for formatting EditorGadget 
@@ -410,8 +407,6 @@ EndStructure
 
 Global st.SetName
 Global bin$ = GetExePath()+"bin\"
-Global YM$="NDEwMDEyOTcxMTA2OTQ3AA"
-Global YMB$="aHR0cHM6Ly95b29tb25leS5ydS90by80MTAwMTI5NzExMDY5NDcA"
 
 ;--> Чтение настроек из файла или установка значений "По умолчанию" ------
 OpenPreferences(bin$+"config\settings.ini") 
@@ -694,8 +689,6 @@ While #True
 							OpenHelp(bin$+"Help.chm", "")
 						Case #AuthorChannel
 							RunProgram("https://www.youtube.com/channel/UCW4P2Eb49-15phyn_T0i0Fg")
-						Case #Donate
-							WindowDonate()
 						Case #About
 							WindowAbout()
 						Case #Undo
@@ -1638,15 +1631,6 @@ Procedure Actions(*Value)
           Message(">< !!! "+Lng(74)+" !!! >< "+Lng(133)+" ("+ErrorsCount+")",1); Внимание Имеются ошибки выполнения
         EndIf
         Message(">< !!! "+Lng(80)) ;Понравился проект? Хотите что бы он развивался? Окажите материальную помощь. Переведите любую сумму на один из этих кошельков:
-        
-        ; Global YM$="NDEwMDEyOTcxMTA2OTQ3AA"
-		; Global YMB$="aHR0cHM6Ly95b29tb25leS5ydS90by80MTAwMTI5NzExMDY5NDcA"
-		; Global QN$ = "RUlUU0U4MTQA"
-		; Global QNB$="aHR0cHM6Ly9xaXdpLmNvbS9uL0VJVFNFODE0AA"
-        
-        Message("YooMoney: "+Decoder(YM$)+"   "+Decoder(YMB$)+Chr(10),1);+"Qiwi Nick: "+Decoder(QN$)+"   "+Decoder(QNB$)
-        ;Message(Decoder(YM$)+"  "+Decoder(WMP$)+"  "+Decoder(WMZ$)+"  "+Decoder(WME$)+"  "+Decoder(PP$),1)
-        
         Message(Lng(27)+" "+Lng(28)) ;Активных действий больше нет. Можно закрыть данное окно.
         If ErrorsCount>0 : Highlight() : Else : SetGadgetState(#Progress , 100) : EndIf
         StatusBarImage(#StatusBar, 0, ImageID(1), #PB_StatusBar_BorderLess)
@@ -3931,10 +3915,7 @@ EndProcedure
 Procedure SystemMenuAddItems()
   Protected hwnd = GetSystemMenu_(WindowID(#WIN_MAIN), #False) 
   Protected Item = GetMenuItemCount_(hwnd)
-  InsertMenu_(hwnd, Item, #MF_BYPOSITION|#MF_SEPARATOR, 0, 0) 
-  Item+1
-  InsertMenu_(hwnd, Item, #MF_BYPOSITION|#MF_STRING, #Donate, Lng(17))
-  SetMenuItemBitmaps_(hwnd,Item, #MF_BYPOSITION, ImageID(ico2bmp(14)), #Null)
+  InsertMenu_(hwnd, Item, #MF_BYPOSITION|#MF_SEPARATOR, 0, 0)
   Item+1
   InsertMenu_(hwnd, Item, #MF_BYPOSITION|#MF_STRING, #About, Lng(18))
   SetMenuItemBitmaps_(hwnd,Item, #MF_BYPOSITION, ImageID(ico2bmp(7)), #Null)
@@ -3979,7 +3960,6 @@ Procedure MakeMenuBar() ;Создаём MenuBar
     MenuItem(#Discussion, Lng(15), ImageID(8))		;Обсуждение
 ;     MenuItem(#Pda, Lng(14), ImageID(12))    		;Страничка
     MenuItem(#AuthorChannel, Lng(16), ImageID(10))	;Канал автора
-    MenuItem(#Donate, Lng(17), ImageID(14))			;Помощь проекту
     MenuItem(#About, Lng(18), ImageID(7))			;О программе
     
     AddKeyboardShortcut(#WIN_MAIN, #PB_Shortcut_Control | #PB_Shortcut_Z, #Undo)
@@ -4050,8 +4030,6 @@ Procedure MakeToolBar() ;Создаём меню инструментов;
 ;     ToolBarToolTip(#ToolBar, #Pda, Lng(14))
     ToolBarImageButton(#AuthorChannel, ImageID(10))
     ToolBarToolTip(#ToolBar, #AuthorChannel, Lng(16))
-    ToolBarImageButton(#Donate, ImageID(14))
-    ToolBarToolTip(#ToolBar, #Donate, Lng(17))
     ToolBarImageButton(#About, ImageID(7))
     ToolBarToolTip(#ToolBar, #About, Lng(18))
   EndIf
@@ -4398,51 +4376,6 @@ Procedure WindowSettings()
       SetGadgetState(#Panel, st\Setting_Stage) ;Установка требуемой вкладки
     EndIf
   EndIf
-EndProcedure
-
-Procedure WindowDonate()
-	Static Window=0, CloseMenu = 0, EnterMenu = 1, LinkGadget
-	
-	If Window ; Опрос событий
-		Select Event()	
-			Case #PB_Event_Menu
-				Select EventMenu()
-					Case CloseMenu
-						PostEvent(#PB_Event_CloseWindow, Window,0)
-					Case EnterMenu
-						PostEvent(#PB_Event_Gadget, Window, LinkGadget)
-				EndSelect
-			Case #PB_Event_Gadget
-				Select EventGadget()
-					Case LinkGadget
-						RunProgram(Decoder(YMB$))
-				EndSelect
-			Case #PB_Event_CloseWindow
-				UnbindEvent(#PB_Event_Menu, @WindowDonate(), Window)
-				UnbindEvent(#PB_Event_Gadget, @WindowDonate(), Window)
-				UnbindEvent(#PB_Event_CloseWindow, @WindowDonate(), Window)
-				RemoveKeyboardShortcut(Window, #PB_Shortcut_Escape)
-				RemoveKeyboardShortcut(Window, #PB_Shortcut_Return)
-				CloseWindow(Window)
-				Window=0		
-		EndSelect
-		
-	Else
-		; Создание окна и перенаправление событий
-		Window = OpenWindow(#PB_Any, 0, 0, 250, 170, Lng(72), #PB_Window_SystemMenu | #PB_Window_WindowCentered, WindowID(#WIN_MAIN)) ;#PB_Window_SizeGadget | 
-		SendMessage_ (WindowID(Window), #WM_SETICON, 0, ImageID(14))
-		ImageGadget(#PB_Any, 5, 20, 48, 48, ImageID(15))
-		TextGadget(#PB_Any, 60, 10, 180, 76, Lng(80)) ;Понравился проект? Хотите что бы он развивался? Окажите материальную помощь. Переведите любую сумму на один из этих кошельков:
-		HyperLinkGadget(LinkGadget, 30, 100, 70, 23,"YooMoney:", RGB(0,0,255), #PB_HyperLink_Underline) 
-		StringGadget(#PB_Any, 101, 100, 110, 23, Decoder(YM$), #PB_String_ReadOnly | #PB_String_BorderLess)
-		FrameGadget(#PB_Any, 10, 84, 230, 73, "")
-		
-		BindEvent(#PB_Event_Gadget, @WindowDonate(), Window)
-		BindEvent(#PB_Event_CloseWindow, @WindowDonate(), Window)
-		BindEvent(#PB_Event_Menu, @WindowDonate(), Window)
-		AddKeyboardShortcut(Window, #PB_Shortcut_Escape, CloseMenu)
-		AddKeyboardShortcut(Window, #PB_Shortcut_Return, EnterMenu)
-	EndIf
 EndProcedure
 
 Procedure WindowAbout()
@@ -4930,8 +4863,6 @@ Procedure WinCallback(hWnd,uMsg,wParam,lParam)
 			EndIf	
 		Case #WM_SYSCOMMAND ;Событие в контекстном системном меню 
 			Select wParam
-				Case #Donate
-					WindowDonate()
 				Case #About
 					WindowAbout()
 			EndSelect

@@ -8,12 +8,12 @@
   <section name="data">
     <explorer view="..\..\Program Files (x86)\PureBasic\Examples\" pattern="0"/>
     <log show="1"/>
-    <lastopen date="2025-12-21 11:25" user="Admin" host="I5_10600"/>
+    <lastopen date="2025-12-24 17:14" user="16612" host="DESKTOP-7GD0TVM"/>
   </section>
   <section name="files">
     <file name="MIK.pb">
       <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="1" panelstate="+"/>
-      <fingerprint md5="8e452bcd9668742d09f57ba876c8fe10"/>
+      <fingerprint md5="33da25dc77f1147f5072be1e23ffda21"/>
     </file>
   </section>
   <section name="targets">
