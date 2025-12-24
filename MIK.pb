@@ -4460,7 +4460,6 @@ EndProcedure
 
 Procedure.s stdOutString(Program.s, String.s)
   If Program = "imgextractor"
-    String = RemoveString(String, "imgextractor: vortex edition", #PB_String_NoCase)
 ;     String = ReplaceString(String, "Convert ", "Конвертируем ")
 ;     String = ReplaceString(String, " to ", " в ")
 ;     String = ReplaceString(String, "Extraction from ", "Извлечение из ")
@@ -4477,8 +4476,6 @@ Procedure.s stdOutString(Program.s, String.s)
 ;     String = ReplaceString(String, " size:", " размер:")
 ;     String = ReplaceString(String, "version:", "версия:")
 ;     String = ReplaceString(String, " bytes", " байт")
-  ElseIf Program = "7z"
-    String = RemoveString(String, "7-Zip 19.00 (x86) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21", #PB_String_NoCase)
   ElseIf Program = "make_ext4fs"
 ;     String = ReplaceString(String, "loaded ", "загружено ")
 ;     String = ReplaceString(String, " entries", " записей")
@@ -4487,17 +4484,12 @@ Procedure.s stdOutString(Program.s, String.s)
 ;    ;String = ReplaceString(String, " blocks", " блоки")
      
   EndIf
-  
-  String = RemoveString(String, "| modded by vm03 & jamflux", #PB_String_NoCase)
-  
   ProcedureReturn String
 EndProcedure
 
 Procedure.s stdErrString(Program.s, String.s)
     Protected FindPosText, LenFirstText, LenLastText, Value.l
     If Program = "make_ext4fs"
-        String = RemoveString(String, "make_ext4fs.exe vortex edition", #PB_String_NoCase)
-        
         FindPosText= FindString(String, "failed to allocate", 0, #PB_String_NoCase)
         If FindPosText
             LenFirstText+FindPosText+19
