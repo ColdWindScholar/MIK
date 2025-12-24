@@ -1,2 +1,0 @@
-make_ext4fs
-pause
