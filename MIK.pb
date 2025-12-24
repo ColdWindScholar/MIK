@@ -582,7 +582,7 @@ ProgramPath$ = ProgramFilename()
 CheckAppPath(ProgramPath$)
 If GetFileAttributes(ProgramPath$) & #PB_FileSystem_ReadOnly
   ;Debug "Файл только для чтения!"
-  Message("Файл только для чтения: "+ Str(SetFileAttributes(ProgramPath$, #PB_FileSystem_Normal)))
+  Message("Readonly file:: "+ Str(SetFileAttributes(ProgramPath$, #PB_FileSystem_Normal)))
   ;Debug SetFileAttributes(ProgramPath$, #PB_FileSystem_Normal)
   SetGadgetState(#Progress , 100)
   SendMessage_(GadgetID(#Progress), #PBM_SETSTATE, #PBST_ERROR, 0)
