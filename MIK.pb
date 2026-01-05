@@ -4420,6 +4420,11 @@ EndProcedure
 
 Procedure SetWinOpacity(hwnd.l, Opacity.l) ; Opacity: в данном интервале: 0-255 
   SetWindowLong_(hwnd, #GWL_EXSTYLE, $00080000) 
+  Protected dark_mode = 2;
+  If OpenLibrary(2, "dwmapi.dll")
+    CallFunction(2, "DwmSetWindowAttribute", hwnd, 20,@dark_mode,SizeOf(dark_mode))
+    CloseLibrary(2)
+  EndIf
   If OpenLibrary(1, "user32.dll") 
     CallFunction(1, "SetLayeredWindowAttributes", hwnd, 0, Opacity, 2) 
     CloseLibrary(1) 
@@ -5150,8 +5155,8 @@ DataSection
 	end_lng:
 EndDataSection
 ; IDE Options = PureBasic 6.04 LTS (Windows - x64)
-; CursorPosition = 4467
-; FirstLine = 4445
+; CursorPosition = 4424
+; FirstLine = 4418
 ; Folding = -------------------
 ; Markers = 737,1937,4061,4062
 ; Optimizer
