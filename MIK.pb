@@ -4376,6 +4376,7 @@ Procedure WindowSettings()
       SetGadgetState(#Panel, st\Setting_Stage) ;Установка требуемой вкладки
     EndIf
   EndIf
+  SetWinOpacity(WindowID(#WIN_SETTING), st\Window_Transparency)
 EndProcedure
 
 Procedure WindowAbout()
@@ -4415,6 +4416,7 @@ Procedure WindowAbout()
 		BindEvent(#PB_Event_Menu, @WindowAbout(), Window)
 		BindEvent(#PB_Event_CloseWindow, @WindowAbout(), Window)
 		AddKeyboardShortcut(Window, #PB_Shortcut_Escape, CloseMenu)
+		SetWinOpacity(WindowID(Window), st\Window_Transparency)
 	EndIf
 EndProcedure
 
@@ -5155,8 +5157,8 @@ DataSection
 	end_lng:
 EndDataSection
 ; IDE Options = PureBasic 6.04 LTS (Windows - x64)
-; CursorPosition = 4424
-; FirstLine = 4418
+; CursorPosition = 4378
+; FirstLine = 4367
 ; Folding = -------------------
 ; Markers = 737,1937,4061,4062
 ; Optimizer
