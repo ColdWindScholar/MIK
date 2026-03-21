@@ -4568,7 +4568,8 @@ EndProcedure
 
 Procedure RunConsole(File$, Parameter$, WorkingDirectory$, Flags=0)
     Protected FileName$ = LCase(GetFilePart(File$, #PB_FileSystem_NoExtension));+" 2>1.txt"
-	Protected iPid = RunProgram("cmd.exe", "/c "+File$+" "+Parameter$, WorkingDirectory$, #PB_Program_Open | #PB_Program_Read | #PB_Program_Error | #PB_Program_Hide) ;    
+    Message(File$+" "+Parameter$)
+	Protected iPid = RunProgram(File$, Parameter$, WorkingDirectory$, #PB_Program_Open | #PB_Program_Read | #PB_Program_Error | #PB_Program_Hide) ;    
 	;Protected iPid = RunProgram(File$, Parameter$, WorkingDirectory$, #PB_Program_Open | #PB_Program_Read | #PB_Program_Error | #PB_Program_Hide) 
 	Protected stderr$, stdout$, Ret = -300                                                                                                                 
 	If iPid
