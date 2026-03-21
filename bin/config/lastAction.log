@@ -1,1 +1,67 @@
 将文件拖放到此窗口内或程序图标上进行解包，支持固件映像 (*.img), 更新文件 (*.zip), 分区映像 (*.img, *.PARTITION, *.fex, *.new.dat, *.new.dat.br) 。也可将包含已进行解包操作的文件夹重新打包。
+路径: C:\Users\16612\Downloads\vendor
+符号: 31  拉丁文: 31  非拉丁文: 0  空间: 0
+重命名 vendor.img 为 vendor.bak
+成功
+FsPatcher: The original file has 2216 entries
+FsPatcher: Added 0 entries
+
+打包 erofs...
+正在打包分区映像： vendor.img |Raw| 请稍后...
+<E> erofs: 
+mkfs_parse_options_cfg() Line[540] unexpected argument: >
+mkfs.erofs 1.6-affggh-Cygwin-230721
+
+usage: [options] FILE DIRECTORY
+Generate erofs image from DIRECTORY to FILE, and [options] are:
+ -b#                   set block size to # (# = page size by default)
+ -d#                   set output message level to # (maximum 9)
+ -x#                   set xattr tolerance to # (< 0, disable xattrs; default 2)
+ -zX[,Y][:..]          X=compressor (Y=compression level, optional)
+                       alternative algorithms can be separated by colons(:)
+ -C#                   specify the size of compress physical cluster in bytes
+ -EX[,...]             X=extended options
+ -L volume-label       set the volume label (maximum 16)
+ -T#                   set a fixed UNIX timestamp # to all files
+ -UX                   use a given filesystem UUID
+ --all-root            make all files owned by root
+ --blobdev=X           specify an extra device X to store chunked data
+ --chunksize=#         generate chunk-based files with #-byte chunks
+ --compress-hints=X    specify a file to configure per-file compression strategy
+ --exclude-path=X      avoid including file X (X = exact literal path)
+ --exclude-regex=X     avoid including files that match X (X = regular expression)
+ --file-contexts=X     specify a file contexts file to setup selinux labels
+ --force-uid=#         set all file uids to # (# = UID)
+ --force-gid=#         set all file gids to # (# = GID)
+ --uid-offset=#        add offset # to all file uids (# = id offset)
+ --gid-offset=#        add offset # to all file gids (# = id offset)
+ --help                display this help and exit
+ --ignore-mtime        use build time instead of strict per-file modification time
+ --max-extent-bytes=#  set maximum decompressed extent size # in bytes
+ --preserve-mtime      keep per-file modification time strictly
+ --aufs                replace aufs special files with overlayfs metadata
+ --tar=[fi]            generate an image from tarball(s)
+ --quiet               quiet execution (do not write anything to standard output.)
+ --random-pclusterblks randomize pclusterblks for big pcluster (debugging only)
+ --random-algorithms   randomize per-file algorithms (debugging only)
+ --xattr-prefix=X      X=extra xattr name prefix
+ --mount-point=X       X=prefix of target fs path (default: /)
+with following android-specific options:
+ --product-out=X       X=product_out directory
+ --fs-config-file=X    X=fs_config file
+ --block-list-file=X   X=block_list file
+退出代码： mkfs.erofs: 1  (执行错误!)
+
+重命名 vendor.bak 为 vendor.img
+构建分区映像： vendorimg 已完成。
+
+>< !!! 请注意 !!! >< 出现执行错误 (1)
+
+>< !!! 如果你喜欢这个项目并想让它持续发展，可将任意金额转入以下钱包进行捐赠：
+任务已完成。 您可以关闭此窗口。
+路径: C:\Users\16612\Downloads\vendor\vendor
+符号: 38  拉丁文: 38  非拉丁文: 0  空间: 0
+在目录中： "vendor" 没有找到构建图像的说明！
+
+>< !!! 如果你喜欢这个项目并想让它持续发展，可将任意金额转入以下钱包进行捐赠：
+任务已完成。 您可以关闭此窗口。
