@@ -4465,34 +4465,6 @@ Procedure.s Replace(Str.s, English.s, National.s)
   ProcedureReturn ReplaceString(Str, English, National)
 EndProcedure
 
-Procedure.s stdOutString(Program.s, String.s)
-  If Program = "imgextractor"
-;     String = ReplaceString(String, "Convert ", "Конвертируем ")
-;     String = ReplaceString(String, " to ", " в ")
-;     String = ReplaceString(String, "Extraction from ", "Извлечение из ")
-  ElseIf Program = "amlimagepack"
-;     String = ReplaceString(String, "Image package version ", "Версия упаковки образа ")
-;     String = ReplaceString(String, "Unpack item ", "Распакован элемент ")
-;     String = ReplaceString(String, "Backup item ", "Резервный элемент  ")
-;     String = ReplaceString(String, " to ", " в ")
-;     String = ReplaceString(String, " from ", " из ")
-;     String = ReplaceString(String, "Pack Item", "Упакован элемент")
-;     String = ReplaceString(String, "Pack image", "Упакован образ")
-;     String = ReplaceString(String, "Write config file ", "Создан файл конфигурации ")
-;     String = ReplaceString(String, "Image unpack ", "Образ распакован ")
-;     String = ReplaceString(String, " size:", " размер:")
-;     String = ReplaceString(String, "version:", "версия:")
-;     String = ReplaceString(String, " bytes", " байт")
-  ElseIf Program = "make_ext4fs"
-;     String = ReplaceString(String, "loaded ", "загружено ")
-;     String = ReplaceString(String, " entries", " записей")
-;     String = ReplaceString(String, "Creating filesystem with parameters:", "Создание файловой системы с параметрами:")
-;     String = ReplaceString(String, "Created filesystem with ", "Создана файловая система с ")
-;    ;String = ReplaceString(String, " blocks", " блоки")
-     
-  EndIf
-  ProcedureReturn String
-EndProcedure
 
 Procedure.s stdErrString(Program.s, String.s)
     Protected FindPosText, LenFirstText, LenLastText, Value.l
@@ -4614,7 +4586,7 @@ Procedure RunConsole(File$, Parameter$, WorkingDirectory$, Flags=0)
 			
 			stdout$=ReadProgramStringOem(iPid)
 			If stdout$
-				Message(stdOutString(FileName$, Cn(stdout$)))
+				Message(Cn(stdout$))
 			EndIf
 		Wend
 		
