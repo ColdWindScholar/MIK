@@ -3,11 +3,13 @@
 符号: 31  拉丁文: 31  非拉丁文: 0  空间: 0
 重命名 vendor.img 为 vendor.bak
 成功
+C:\Users\16612\MIK\bin\fspatch.exe "vendor\vendor" "vendor\config\vendor_fs_config.txt"
 FsPatcher: The original file has 2216 entries
 FsPatcher: Added 0 entries
 
 打包 erofs...
 正在打包分区映像： vendor.img |Raw| 请稍后...
+C:\Users\16612\MIK\bin\erofs\mkfs.erofs.exe -zlz4hc,1 -T 1230768000 -U b912ce74-4ffb-5871-897e-eac98c3505a9 --mount-point=/vendor --fs-config-file=vendor/config/vendor_fs_config.txt --file-contexts=vendor/config/vendor_file_contexts.txt vendor.img vendor/vendor > nul
 <E> erofs: 
 mkfs_parse_options_cfg() Line[540] unexpected argument: >
 mkfs.erofs 1.6-affggh-Cygwin-230721
@@ -56,12 +58,6 @@ with following android-specific options:
 构建分区映像： vendorimg 已完成。
 
 >< !!! 请注意 !!! >< 出现执行错误 (1)
-
->< !!! 如果你喜欢这个项目并想让它持续发展，可将任意金额转入以下钱包进行捐赠：
-任务已完成。 您可以关闭此窗口。
-路径: C:\Users\16612\Downloads\vendor\vendor
-符号: 38  拉丁文: 38  非拉丁文: 0  空间: 0
-在目录中： "vendor" 没有找到构建图像的说明！
 
 >< !!! 如果你喜欢这个项目并想让它持续发展，可将任意金额转入以下钱包进行捐赠：
 任务已完成。 您可以关闭此窗口。
